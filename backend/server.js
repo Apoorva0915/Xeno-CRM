@@ -31,11 +31,12 @@ app.use(
       mongoUrl: process.env.MONGO_URI, // Your MongoDB URI
       ttl: 14 * 24 * 60 * 60, // Session TTL (14 days)
     }),
-    cookie: {
-      secure: process.env.NODE_ENV === "production", // Secure cookies in production
-      httpOnly: true,
-      maxAge: 14 * 24 * 60 * 60 * 1000, // 14 days
-    },
+cookie: {
+  secure: process.env.NODE_ENV === "production",
+  httpOnly: true,
+  sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax",
+  maxAge: 14 * 24 * 60 * 60 * 1000,
+}
   })
 );
 
