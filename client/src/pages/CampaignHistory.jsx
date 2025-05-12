@@ -23,20 +23,20 @@ const CampaignHistory = () => {
     fetchCampaigns();
   }, []);
 
-  const deliverCampaign = async (campaignId) => {
-    try {
-      const response = await axios.post(
-        `${import.meta.env.VITE_BACKEND_URL}/api/delivery/deliver`,
-        { campaignId },
-        { withCredentials: true }
-      );
+const deliverCampaign = async (campaignId) => {
+  try {
+    const response = await axios.post(
+      `${import.meta.env.VITE_BACKEND_URL}/api/delivery/deliver`,
+      { campaignId },
+      { withCredentials: true }
+    );
 
-      alert("Campaign Delivered!");
-      fetchLogs(campaignId);
-    } catch (error) {
-      console.error(error.message);
-    }
-  };
+    alert("Campaign Delivered!");
+    fetchLogs(campaignId); 
+  } catch (error) {
+    console.error(error.message);
+  }
+};
 
   const fetchLogs = async (campaignId) => {
     try {
@@ -92,7 +92,7 @@ const CampaignHistory = () => {
                     className="bg-green-600 text-white px-2 py-1 rounded mr-2"
                     onClick={() => deliverCampaign(campaign._id)}
                   >
-                    Deliver
+                    Deliver Message
                   </button>
                   <button
                     className="bg-blue-600 text-white px-2 py-1 rounded"
