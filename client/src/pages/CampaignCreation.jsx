@@ -38,7 +38,7 @@ const CampaignCreation = () => {
 
   return (
     <div className="p-8">
-      <h2 className="text-2xl font-semibold mb-6 text-gray-800">Create New Campaign</h2>
+      <h2 className="text-4xl font-semibold mb-6 text-[#002d9c]">Create New Campaign</h2>
 
       <form onSubmit={submitCampaign} className="bg-white p-6 rounded-lg shadow-md space-y-4">
 
@@ -100,7 +100,7 @@ const CampaignCreation = () => {
           </button>
           <button
             type="submit"
-            className="bg-blue-600 hover:bg-blue-700 text-white text-sm px-4 py-2 rounded transition cursor-pointer"
+            className="bg-[#002d9c] hover:bg-blue-700 text-white text-sm px-4 py-2 rounded transition cursor-pointer"
           >
             Preview & Confirm
           </button>

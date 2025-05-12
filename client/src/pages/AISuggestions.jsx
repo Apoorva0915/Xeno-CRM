@@ -45,7 +45,7 @@ const AISuggestions = () => {
 
   return (
     <div className="p-8">
-      <h2 className="text-2xl font-semibold mb-4">AI-Powered Campaign Suggestions</h2>
+      <h2 className="text-4xl text-[#002d9c] font-semibold mb-4">AI-Powered Campaign Suggestions</h2>
       <form onSubmit={fetchSuggestions} className="bg-white p-6 rounded-lg shadow-md">
         <textarea
           className="w-full mb-4 p-2 border"
@@ -59,7 +59,7 @@ const AISuggestions = () => {
           value={audienceDetails}
           onChange={(e) => setAudienceDetails(e.target.value)}
         />
-        <button className="bg-blue-600 text-white px-4 py-2 rounded" disabled={loading}>
+        <button className="bg-[#002d9c] text-white px-4 py-2 rounded" disabled={loading}>
           {loading ? "Fetching Suggestions..." : "Get Suggestions"}
         </button>
       </form>

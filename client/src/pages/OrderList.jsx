@@ -8,7 +8,7 @@ const OrderList = () => {
     const fetchOrders = async () => {
       try {
         const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/orders`, {
-          withCredentials: true, 
+          withCredentials: true,
         });
         setOrders(response.data);
       } catch (error) {
@@ -19,13 +19,12 @@ const OrderList = () => {
     fetchOrders();
   }, []);
 
-
   return (
     <div className="p-6 md:p-10 bg-gray-50">
-      <h2 className="text-3xl font-semibold text-gray-800 mb-6">Orders List</h2>
+      <h2 className="text-4xl font-semibold text-[#002d9c] mb-6">Orders List</h2>
       <div className="overflow-x-auto bg-white shadow-md rounded-lg">
         <table className="w-full table-auto border-separate border-spacing-0">
-          <thead>
+          <thead className="bg-[#002d9c] text-white">
             <tr>
               <th className="p-4 text-left text-sm font-medium">Order Details</th>
               <th className="p-4 text-left text-sm font-medium">Amount</th>

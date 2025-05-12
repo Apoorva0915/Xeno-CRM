@@ -70,7 +70,7 @@ const DataIngestion = () => {
 
   return (
     <div className="p-6 md:p-10 min-h-screen">
-      <h1 className="text-3xl font-bold mb-8 text-gray-800">Data Ingestion</h1>
+      <h1 className="text-4xl font-bold mb-8 text-[#002d9c]">Data Ingestion</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Customer Form */}
@@ -112,7 +112,7 @@ const DataIngestion = () => {
           </div>
           <button
             type="submit"
-            className="mt-6 w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white py-3 rounded-lg hover:opacity-90 transition-all duration-200 shadow-md hover:shadow-lg"
+            className="mt-6 w-full bg-gradient-to-r bg-[#002d9c] text-white py-3 rounded-lg hover:opacity-90 transition-all duration-200 shadow-md hover:shadow-lg"
             disabled={isLoading}
           >
             {isLoading ? "Submitting..." : "Submit Customer"}

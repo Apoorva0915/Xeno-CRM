@@ -10,10 +10,13 @@ require("./config/passportSetup");
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Connect Database
+// Connect to DB
 connectDB();
 
-// Middleware
+// Trust the proxy - required for secure cookies on Render
+app.set("trust proxy", 1);
+
+// CORS
 app.use(cors({
   origin: process.env.FRONTEND_URL,
   credentials: true,
@@ -21,25 +24,26 @@ app.use(cors({
 
 app.use(express.json());
 
-// Session setup with MongoDB store
+// Session setup
 app.use(
   session({
-    secret: process.env.SESSION_SECRET || "your-secret-key", // Use a strong secret
+    secret: process.env.SESSION_SECRET || "your-secret-key",
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false,
     store: MongoStore.create({
-      mongoUrl: process.env.MONGO_URI, // Your MongoDB URI
-      ttl: 14 * 24 * 60 * 60, // Session TTL (14 days)
+      mongoUrl: process.env.MONGO_URI,
+      ttl: 14 * 24 * 60 * 60,
     }),
-cookie: {
-  secure: process.env.NODE_ENV === "production",
-  httpOnly: true,
-  sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax",
-  maxAge: 14 * 24 * 60 * 60 * 1000,
-}
+    cookie: {
+      secure: process.env.NODE_ENV === "production", // true on Render
+      httpOnly: true,
+      sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax",
+      maxAge: 14 * 24 * 60 * 60 * 1000, // 14 days
+    },
   })
 );
 
+// Passport setup
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -52,7 +56,7 @@ app.use("/api/delivery", require("./routes/deliveryRoutes"));
 app.use("/api/ai", require("./routes/aiRoutes"));
 app.use("/api/analytics", require("./routes/analyticsRoutes"));
 
-// Start Server
+// Start server
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });

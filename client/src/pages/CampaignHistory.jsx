@@ -62,9 +62,9 @@ const CampaignHistory = () => {
 
   return (
     <div className="p-8">
-      <h2 className="text-2xl font-semibold mb-4">Campaign History</h2>
+      <h2 className="text-4xl text-[#002d9c] font-semibold mb-4">Campaign History</h2>
       <table className="w-full text-left border-collapse">
-        <thead>
+        <thead className="bg-[#002d9c] text-white">
           <tr>
             <th className="border p-2">Campaign Name</th>
             <th className="border p-2">Rules</th>
