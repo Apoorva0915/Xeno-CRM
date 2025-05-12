@@ -73,8 +73,7 @@ Below is the architecture diagram illustrating the flow of data between the clie
 ## Summary of AI Tools and Other Tech Used
 
 - **Google Gemini:** Integrated for enhanced AI-driven suggestions and real-time analysis.
-- **Kafka/RabbitMQ/Redis Streams:** Used for real-time updates and event-driven data synchronization.
-- **Vite:** Lightning-fast development server for React.
+=- **Vite:** Lightning-fast development server for React.
 - **TailwindCSS:** Utility-first CSS framework for rapid UI development.
 - **MongoDB:** NoSQL database for scalable data storage.
 
