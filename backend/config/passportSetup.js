@@ -26,6 +26,7 @@ passport.use(
           : "http://localhost:5000/api/auth/google/callback",
     },
     async (accessToken, refreshToken, profile, done) => {
+      console.log("Google Profile:", profile); // Log the profile data for debugging
       const { id, displayName, emails, photos } = profile;
       try {
         let user = await User.findOne({ googleId: id });
@@ -42,9 +43,10 @@ passport.use(
 
         done(null, user);
       } catch (err) {
-        console.error(err);
+        console.error("Error in Google OAuth:", err);
         done(err, null);
       }
     }
   )
 );
+

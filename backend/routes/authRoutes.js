@@ -25,7 +25,7 @@ router.get("/logout", (req, res, next) => {
             if (err) {
                 return next(err);
             }
-            res.clearCookie("connect.sid"); 
+            res.clearCookie("connect.sid", { httpOnly: true, secure: true }); // Clear session cookie
             res.status(200).json({ message: "Logged out successfully" });
         });
     });
@@ -33,12 +33,12 @@ router.get("/logout", (req, res, next) => {
 
 // Get User Info
 router.get("/user", (req, res) => {
+  console.log("Session User:", req.user); // Log session data to ensure it's populated
   if (!req.user) {
     console.error("User not authenticated");
     return res.status(401).json({ error: "Unauthorized: No user data found" });
   }
-
-  // console.log("User Info:", req.user);
   res.status(200).json(req.user);
 });
+
 module.exports = router;
