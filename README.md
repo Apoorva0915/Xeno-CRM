@@ -17,22 +17,27 @@ Xeno CRM is a comprehensive Customer Relationship Management platform designed t
 
 ---
 
+## Deployed Link
+- [https://xeno-crm-frontend.onrender.com](https://xeno-crm-frontend.onrender.com)
+
+---
+
 ## Local Setup Instructions
 
-1. **Clone the repository:**  
+1. **Clone the repository:**
    ```bash
-   git clone https://github.com/Apoorva0915/Xeno-CRM.git
+   git clone [https://github.com/Apoorva0915/Xeno-CRM.git](https://github.com/Apoorva0915/Xeno-CRM.git)
    cd xeno-crm
    ```
 
-2. **Install dependencies:**  
+2. **Install dependencies:**
    ```bash
    npm install
    cd client && npm install
    cd ../server && npm install
    ```
 
-3. **Configure environment variables:**  
+3. **Configure environment variables:**
    Create a `.env` file in the root of the `server` folder and add:
    ```env
    PORT=5000
@@ -46,7 +51,7 @@ Xeno CRM is a comprehensive Customer Relationship Management platform designed t
    EMAIL_PASS=<your_email_password>
    ```
 
-4. **Run the application:**  
+4. **Run the application:**
    In the server folder:
    ```bash
    npm run dev
@@ -65,7 +70,6 @@ Below is the architecture diagram illustrating the flow of data between the clie
 
 ```
 [Client (React)] <--> [Server (Express)] <--> [Database (MongoDB)]
-
 ```
 
 ---
@@ -73,7 +77,7 @@ Below is the architecture diagram illustrating the flow of data between the clie
 ## Summary of AI Tools and Other Tech Used
 
 - **Google Gemini:** Integrated for enhanced AI-driven suggestions and real-time analysis.
-=- **Vite:** Lightning-fast development server for React.
+- **Vite:** Lightning-fast development server for React.
 - **TailwindCSS:** Utility-first CSS framework for rapid UI development.
 - **MongoDB:** NoSQL database for scalable data storage.
 
